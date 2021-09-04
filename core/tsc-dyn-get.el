@@ -44,6 +44,12 @@ Example setting:
   :group 'tsc
   :type 'directory)
 
+(defcustom tsc-dyn-get-from '(:github :compilation)
+  "Where the dynamic module binary should come from, in order of priority."
+  :group 'tsc
+  :type '(set (const :tag "Binary from GitHub" :github)
+              (const :tag "Local Compilation" :compilation)))
+
 ;; TODO: Handle systems with no pre-built binaries better.
 (defun tsc-dyn-get--dir ()
   "Return the directory to put `tsc-dyn' module in."
